@@ -1,0 +1,13 @@
+# file: .gitignore
+.env
+env/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+staticfiles/
+media/
+*.log
+.coverage
+
+dataops_impl_plan.md
