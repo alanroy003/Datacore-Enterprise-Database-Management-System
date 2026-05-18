@@ -8,4 +8,5 @@ router.register('assets',         AssetViewSet,       basename='asset')
 router.register('asset-logs',     AssetLogViewSet,    basename='asset-log')
 router.register('asset-expiries', AssetExpiryViewSet, basename='asset-expiry')
 
+
 urlpatterns = [path('', include(router.urls))]

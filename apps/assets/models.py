@@ -93,6 +93,8 @@ class AssetExpiry(models.Model):
     days_before_alert = models.IntegerField(default=30)
     created_at        = models.DateTimeField(auto_now_add=True)
 
+
+
     class Meta:
         unique_together = [('asset', 'expiry_type')]
         ordering = ['expiry_date']
