@@ -1,11 +1,9 @@
+# file: scripts/entrypoint.sh
 #!/bin/bash
 set -e
-
 echo "Running migrations..."
 python manage.py migrate --noinput
-
-echo "Collecting static..."
+echo "Collecting static files..."
 python manage.py collectstatic --noinput
-
 echo "Starting..."
 exec "$@"

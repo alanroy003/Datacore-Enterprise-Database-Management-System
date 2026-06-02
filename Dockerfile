@@ -1,5 +1,5 @@
-# Dockerfile
-FROM python:3.12-slim
+# file: Dockerfile
+FROM python:3.10-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
@@ -7,16 +7,14 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
-    libpq-dev gcc dos2unix \
+    libpq-dev gcc \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt requirements.txt
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN dos2unix scripts/entrypoint.sh && chmod +x scripts/entrypoint.sh
+RUN python manage.py collectstatic --noinput || true
 
 EXPOSE 8000
-ENTRYPOINT ["scripts/entrypoint.sh"]
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
