@@ -1,0 +1,15 @@
+# file: .env
+DJANGO_SECRET_KEY=django-insecure-s!^7oz(35%yk!-)ja@gf5(a!7hx(1-kx%)@%*74i5bv=90yx)=
+DJANGO_DEBUG=False
+DJANGO_ALLOWED_HOSTS=dataops-core.railway.app
+DJANGO_SETTINGS_MODULE  = config.settings.prod
+
+DB_NAME=postgres
+DB_USER=postgres.yinublewgjhfuvuriqhi
+DB_PASSWORD=QXF8LRrvVMlSyZpk
+DB_HOST=aws-1-ap-northeast-1.pooler.supabase.com
+DB_PORT=6543
+
+REDIS_URL=redis://default:yUGhWWVHPfQfhomtHBxJZbRgFYOpfenQ@redis.railway.internal:6379
+DJANGO_SETTINGS_MODULE=config.settings.dev
+
